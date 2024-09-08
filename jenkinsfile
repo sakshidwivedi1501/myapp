@@ -34,12 +34,11 @@ pipeline {
                 script {
                     sh 'ls -lrt'
                     // Navigate to the application directory and run it
-                    dir('myapp') {
-                        sh 'npm install'
-                        sh 'npm install --save express'
-                        sh 'ls -lrt'
-                        sh 'chmod 777 index.js'
-                        sh 'node index.js'
+                    sh 'npm install'
+                    sh 'npm install --save express'
+                    sh 'ls -lrt'
+                    sh 'chmod 777 index.js'
+                    sh 'node index.js'
                     }
                 }
             }
