@@ -38,7 +38,7 @@ pipeline {
                     sh 'npm install --save express'
                     sh 'ls -lrt'
                     sh 'chmod 777 index.js'
-                    sh 'nohup node index.js &'
+                    sh 'node index.js'
                 }
             }
         }
