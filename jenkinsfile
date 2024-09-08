@@ -35,6 +35,7 @@ pipeline {
                 script {
                     // Navigate to the application directory and run it
                     dir('myapp') {
+                        sh 'npm install --save express'
                         sh 'npm install'
                         sh 'node index.js'
                     }
