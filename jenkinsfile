@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Cloning the Git repository
-                git url: 'https://github.com/sakshidwivedi1501/weather-app.git'
+                git url: 'https://github.com/sakshidwivedi1501/myapp.git'
             }
         }
 
