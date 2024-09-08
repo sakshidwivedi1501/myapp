@@ -21,7 +21,7 @@ pipeline {
                 script {
                     // Ensure nvm is available and install Node.js
                     sh '''
-                        nvm use node
+                        npm use node
                         # Verify the installation
                         node -v
                         npm -v
@@ -38,6 +38,7 @@ pipeline {
                         sh 'npm install'
                         sh 'npm install --save express'
                         sh 'ls -lrt'
+                        sh 'chmod 777 index.js'
                         sh 'node index.js'
                     }
                 }
