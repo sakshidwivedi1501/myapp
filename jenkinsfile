@@ -38,17 +38,13 @@ pipeline {
                     sh 'npm install --save express'
                     sh 'ls -lrt'
                     sh 'chmod 777 index.js'
-                    sh 'node index.js'
+                    sh 'nohup node index.js &'
                 }
             }
         }
     }
 
     post {
-        always {
-            // Clean up the workspace after the build
-            cleanWs()
-        }
         success {
             echo 'Pipeline succeeded!'
         }
