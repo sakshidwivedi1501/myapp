@@ -39,7 +39,6 @@ pipeline {
                     sh 'ls -lrt'
                     sh 'chmod 777 index.js'
                     sh 'node index.js'
-                    }
                 }
             }
         }
