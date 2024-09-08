@@ -15,6 +15,7 @@ pipeline {
                     sh 'ls -R'
                 }
             }
+        }
         stage('Setup Environment') {
             steps {
                 script {
