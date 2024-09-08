@@ -1,6 +1,20 @@
 pipeline {
     agent any  // Specifies that the pipeline can run on any available agent
     stages {
+        stage('Checkout') {
+            steps {
+                // Cloning the Git repository
+                git url: 'https://github.com/sakshidwivedi1501/myapp.git'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                script {
+                    // List files in the workspace for debugging
+                    sh 'ls -R'
+                }
+            }
         stage('Setup Environment') {
             steps {
                 script {
