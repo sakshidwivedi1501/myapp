@@ -6,7 +6,7 @@ pipeline {
                 script {
                     // Ensure nvm is available and install Node.js
                     sh '''
-                        apt install npm
+                        sudo apt install npm
 
                         # Install the specific Node.js version
                         npm install node
