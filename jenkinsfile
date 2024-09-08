@@ -32,6 +32,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 script {
+                    sh 'ls -lrt'
                     // Navigate to the application directory and run it
                     dir('myapp') {
                         sh 'npm install'
