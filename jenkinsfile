@@ -38,7 +38,6 @@ pipeline {
                     sh 'npm install --save express'
                     sh 'ls -lrt'
                     sh 'chmod 777 index.js'
-                    sh 'pkill -f "node index.js"'
                     sh 'JENKINS_NODE_COOKIE=dontKillMe nohup node index.js &'
                 }
             }
