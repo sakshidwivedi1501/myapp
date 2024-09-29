@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 script {
-                    sshagent([' ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcrJaUkx2u+uK90kPz6sADoHkJy8off1sErI7oO8IYIh4dHRm0ZV89V6dvHOXWYu+PkMumqxW2jBXvWV++ZmEGp8IeE/1CEO6nHp73alUQSdz9dh6DEV4g9zv9UHCm2bVG78Vc5QQMdgI1W4NO6QMReVIoTLVOWLwhWnG7yqTxT2nHBOoROMSrvgWr75pzhQZrp3aD9xC13euRht8c9YsCuq+kPuqGI9wm8Yk8ROsHf1xkh5f8iKqPqGhSZYX7AsefqOwvPqzfECzGpjBCDhQTUkVIdsniLfi/Y2hxvjJBaNP09wsZY91LV4jayDg3Ar2DF8/ekrrqAfZYwNlCajmD doc']) {
+                    sshagent(['13.115.2.157']) {
                     	sh """
                     	ssh -o StrictHostKeyChecking=no -i /home/ubuntu/doc.pem ubuntu@ec2-13-115-2-157.ap-northeast-1.compute.amazonaws.com
                     	sudo systemctl start docker
