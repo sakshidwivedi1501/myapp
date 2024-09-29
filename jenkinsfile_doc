@@ -5,7 +5,33 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 script {
-                    sshagent(['13-115-2-157']) {
+                    sshagent(['-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAnKyWlJMdrvrivdJD8+rAA6B5CcvKH39bBKyO6DvCGCIeHR0Z
+tGVfPVenbxzl1mLvj5DLpqsVtowV71lfvmZhBqfCHhP9QhDupx6e92pVEEnc/XYe
+gxFeIPc7/VBwptm1Ru/FXOUEDHYCNVuDTukDEXlSKEy1Tli8IVpxu8qk8U9pxwTq
+ETjEq74Fq++ac4UGa6d2g/cQtd3rkYbfHPWLArqvpD7qhiPcJvGJPETrB39cZIeX
+/Iiqj6hoUmWF+wLHn6jsLz6s3xAsxqYwQg4UE1JFSHbJ4i34v2Nocb4yQWjT9PcL
+GWPdS1eI2sg4NwK9gxfP3pK66gH2WMDZQmo5gwIDAQABAoIBAHK8SYIAwsoz3Pza
+EP19uqRtTnaIETtDzun7XKRhruBxi9ASUZK0cizAFlPeu8pmpb1jcmBaBgqrSB0C
+PIV5ADEZhaT1SpCpSbyFRjE2Y5kMHpRXfjzJ6T8HD52Q3Q6zfHe4e7Zt2KsveKqO
+m/ib161iRXJRyqzXet6KF6RI4MX+FfdhVi/uK75eJ61KxZmuA6kPsGogW0dn2ivT
+HZGT1YgU7yC0MnGd7VNnVjiFrHKp6FrqazuSWymwaX+iIgouuduk7GUAqH7y5VwW
+UY8D5j8EDX5PYE925JbkJRib2yVwXp9b1BEPdcqyY6trbMbxsTUtY13vVnPchGrA
+X8mlc9ECgYEA19tjLTBR7ox7fveoSNe3ci1Vmdas+r1rnQZfex8eZgz9WWQTim8t
+4LadtwzcNoC86CJ9m04CC8y1HZr27mnWYrHwSoZpnaQHZ8uk0sK7f2Cq0HYKfE9+
++q9Poz7XoTL+BzfZH97rNl85vUMpqqZPtEGK6Xg6If4vLOFe1VyuJH8CgYEAuc+Z
+mbXE4cTI/ES+BFEIeE8SbtGe2KQ0uQMOKfxnRhhdjZvdT7yUYCiwMn8kZ0nM/RpJ
+MbOmEMUr7AQ2KPsc/Uw0GkssGjXHNoPIDwF5nncB+3X67k2iQ+WM+DLSJj3L3hjW
+gqUvklqEwAzt9DB+KixA/ojPhatyj2TGDo372P0CgYEAgiOq75uqSgA4lJwLwZ8M
+4rGiYlWjhKifMNSezEQ+t5gtRq+neFb/efOfsrT2L4X+XpYs1G17nlGVAHxlU+hL
+cMWG8eeH1ZsHO/TzMn5lPK6zTWtddwUWsVzwzqMcrftoXEG3jheACA/xZ8IOZOxQ
+MYUykwABTG1LU+usmUZ/V1ECgYEAqA9JEmoBpWJjlyhl5WmVi5uZRHp8fd4ngZ9t
+1DPjBNdM5qQvS8t5OHAUzdeJiZKKwfJgeX/PmCN+Un6MrgxScBfYmF+diCdUA861
+yDzBT768IEDZsWiud1LMakEtKkGCf2NfwdK+cFVG9J29K7wgoOxd7Nq5OGGVwHSZ
+Xti1DdECgYAFyjzAoZcKvO+CZXPe3TlKUH2SpoUT1y3cokKBMjpWlC0/d8fIp0IY
+BEhyZTCtKBYr3JhvBeTzWCLy2tPAQbpNsG9U5oxgqvrdZc491zswQZHPYuI/C02i
+IRi8qmCOwvuzV9rVPKc8Zb0uMQrqxDj9CPZ/8/uRYZ1JrOffVm4+CQ==
+-----END RSA PRIVATE KEY-----']) {
                     	sh """
                     	ssh -o StrictHostKeyChecking=no -i /home/ubuntu/doc.pem ubuntu@ec2-13-115-2-157.ap-northeast-1.compute.amazonaws.com
                     	sudo systemctl start docker
