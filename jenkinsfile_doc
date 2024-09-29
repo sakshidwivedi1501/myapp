@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 script {
-                    sshagent([13-115-2-157]) {
+                    sshagent(['13-115-2-157']) {
                     	sh """
                     	ssh -o StrictHostKeyChecking=no -i /home/ubuntu/doc.pem ubuntu@ec2-13-115-2-157.ap-northeast-1.compute.amazonaws.com
                     	sudo systemctl start docker
