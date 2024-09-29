@@ -1,0 +1,30 @@
+pipeline {
+    agent any  // Specifies that the pipeline can run on any available agent
+
+    stages {
+        stage('Deploy to EC2') {
+            steps {
+                script {
+                    // Use SSH to connect and execute commands
+                    sh """
+                    ssh -o StrictHostKeyChecking=no -i /home/ubuntu/doc.pem ubuntu@ec2-13-115-2-157.ap-northeast-1.compute.amazonaws.com
+                    sudo systemctl start docker
+                    sudo systemctl status docker
+                    sudo docker build -t myapp /path/to/your/dockerfile/directory
+                    sudo docker run -p 10000:10000 -d myapp
+                    ENDSSH
+                    """
+                }
+            }
+        }
+    }
+   
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
