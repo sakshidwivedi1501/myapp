@@ -11,7 +11,7 @@ pipeline {
         stage('List Files') {
             steps {
                 script {
-                    // List files in the workspace for debugging
+                    // List files in the workspace for debugging.
                     sh 'ls -R'
                 }
             }
